@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TryI_nfrastructure_Data_Base_Sql_Server_Data\Try_Infrastructure_Data_Base_Sql_Server_Data.csproj" />
+    <ProjectReference Include="..\Try_Core_Comtract\Try_Core_Contract.csproj" />
+  </ItemGroup>
+
+</Project>
