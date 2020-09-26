@@ -9,12 +9,12 @@ namespace Try_Core_Entities
         public int UserModelId { get; set; }
         public string UserName { get; set; }
 
-        //private string PassWord;
-        //public string PassWord
-        //{
-        //    get { return PassWord; }
-        //    set { PassWord = value; }
-        //}
+        private string PassWord;
+        public string Password
+        {
+            get { return PassWord; }
+            set { PassWord = value+"9999"; }
+        }
 
 
         public List<AccountModel> Accounts { get; set; }

@@ -12,7 +12,7 @@ namespace Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF.Configurations
         public void Configure(EntityTypeBuilder<UserModel> builder)
         {
             builder.HasKey(a => a.UserModelId);
-            //builder.Property(a => a.PassWord).HasField("PassWord");
+            builder.Property(a => a.Password).HasField("PassWord");
             builder.Property<DateTime>("createDate");
             builder.ToTable("User");
         }
