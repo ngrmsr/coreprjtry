@@ -13,6 +13,7 @@ namespace Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF.Configurations
         {
             builder.HasKey(a => a.AccountModelId);
             //builder.HasOne(a=>a.user).WithMany(a=>a)
+            builder.OwnsOne(a => a.address);
             builder.Property<DateTime>("createDate");
             builder.ToTable("Account");
         }

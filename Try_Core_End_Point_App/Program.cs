@@ -9,6 +9,7 @@ using Try_Core_Comtract.Service;
 using Try_Core_Contract.Service;
 using Try_Core_Domain_Service;
 using Try_Core_Entities;
+using Try_Core_Entities.Model;
 using Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF;
 
 namespace Try_Core_End_Point_App
@@ -50,12 +51,20 @@ namespace Try_Core_End_Point_App
             ninjectKernel.Bind<IAccountModelService>().To<AccountModelService>();
             ninjectKernel.Bind<IAccountModelFacade>().To<AccountModelFacade>();
             AccountManager account = new AccountManager(ninjectKernel.Get<IAccountModelFacade>());
-            account.AddAccount(new AccountModel { user = user,Amount=5000 }) ;
+            account.AddAccount(new AccountModel
+            {
+                user = user
+            ,
+                Amount = 5000
+            ,
+                address = new AddressModel() { City = "teharn", Street = "ghale" }
+            }
+            );
             AccountModel accountModel = account.GetOneAccount(1);
             ninjectKernel.Bind<ILoanModelService>().To<LoanModelService>();
             ninjectKernel.Bind<ILoanModelFacade>().To<LoanModelFacade>();
             LoanManager loanManager = new LoanManager(ninjectKernel.Get<ILoanModelFacade>());
-            loanManager.AddLoan(new LoanModel {Amount=2000,Type="Home"});
+            loanManager.AddLoan(new LoanModel { Amount = 2000, Type = "Home" });
             Console.ReadKey();
         }
     }
