@@ -64,7 +64,20 @@ namespace Try_Core_End_Point_App
             ninjectKernel.Bind<ILoanModelService>().To<LoanModelService>();
             ninjectKernel.Bind<ILoanModelFacade>().To<LoanModelFacade>();
             LoanManager loanManager = new LoanManager(ninjectKernel.Get<ILoanModelFacade>());
-            loanManager.AddLoan(new LoanModel { Amount = 2000, Type = "Home" });
+            loanManager.AddLoan(new LoanModel
+            {
+                Amount = 2000,
+                Type = "Home",
+                loanDetail = new LoanDetailModel()
+                {
+                    LoanIdentifierName = "hassan"
+                ,
+                    NumberOfInstallments = 20
+                    ,
+                    AmountPerInstallment = 100
+                }
+            }
+            );
             Console.ReadKey();
         }
     }

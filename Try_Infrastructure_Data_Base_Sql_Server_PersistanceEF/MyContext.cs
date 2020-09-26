@@ -28,6 +28,8 @@ namespace Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF
             modelBuilder.ApplyConfiguration(new AccountConfig());
             modelBuilder.ApplyConfiguration(new LoanConfig());
             modelBuilder.ApplyConfiguration(new UserConfig());
+            modelBuilder.Entity<LoanDetailModel>().Property(a => a.InstallmentStartDate).HasValueGenerator(typeof(DataValueGenerator));
+            //modelBuilder.HasSequence<int>("").StartsAt(100);
         }
         public DbSet<UserModel> UserModel { get; set; }
         public DbSet<AccountModel> AccountModel { get; set; }
