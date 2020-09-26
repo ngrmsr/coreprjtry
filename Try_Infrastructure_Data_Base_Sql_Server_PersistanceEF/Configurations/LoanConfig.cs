@@ -13,6 +13,8 @@ namespace Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF.Configurations
         {
             builder.HasKey(a => a.LoanModelId);
             builder.Property<DateTime>("createDate");
+            //builder.Property(a => a.Amount).IsConcurrencyToken();
+            builder.Property(a => a.Token).IsRowVersion();
             builder.HasOne(a => a.loanDetail).WithOne();
             builder.ToTable("Loan");
         }
