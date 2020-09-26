@@ -14,6 +14,7 @@ namespace Try_Infrastructure_Data_Base_Sql_Server_PersistanceEF.Configurations
             builder.HasKey(a => a.UserModelId);
             builder.Property(a => a.Password).HasField("PassWord");
             builder.Property<DateTime>("createDate");
+            builder.HasChangeTrackingStrategy(ChangeTrackingStrategy.ChangedNotifications);
             builder.ToTable("User");
         }
     }
