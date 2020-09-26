@@ -21,7 +21,7 @@ namespace Try_Core_End_Point_App
             DbContextOptionsBuilder<MyContext> options = new DbContextOptionsBuilder<MyContext>();
             options.UseSqlServer("Password=22552111;Persist Security Info=True;User ID=sa;Initial Catalog=EFTestBank;Data Source=.");
             MyContext ctx = new MyContext(options.Options);
-            ctx.Database.EnsureCreated();
+            //ctx.Database.EnsureCreated();
             //MyContext ctx = new MyContext();
             //UserModel user = new UserModel()
             //{
